@@ -1,7 +1,5 @@
 #include <Arduino.h>
 
-uint8_t overflows_anzahl = 0;
-
 void setup();
 void loop();
 
@@ -27,6 +25,8 @@ void setup()
 
 void loop()
 {
+  static uint8_t overflows_anzahl = 0;
+
   // Check ob Overflow von Timer0 aufgetreten ist
   if(TIFR0 & (1 << TOV0))
   {
@@ -39,6 +39,4 @@ void loop()
     PORTB = PORTB ^ (1 << PB5);
     overflows_anzahl = 0;
   }
-
 }
-
