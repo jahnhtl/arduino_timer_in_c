@@ -1,5 +1,18 @@
 #include <Arduino.h>
 
+int main()
+{
+  setup();
+
+  while (true)
+  {
+    loop();
+  }
+
+  return 0;
+}
+
+
 void setup()
 {
   // Pin PB5 als Ausgang konfigurieren
